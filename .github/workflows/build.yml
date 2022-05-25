@@ -27,6 +27,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     
+      # first step to for the provide id if any
+      - name : ${{github.event.inputs.id}}
+        run: echo run identifier ${{ inputs.id }}
+        
       # sleep for 0.5 mins
       - name: Sleep for 30 seconds
         run: sleep 30s
