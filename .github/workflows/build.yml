@@ -14,7 +14,10 @@ on:
   workflow_dispatch:
      inputs: 
         id:
-          description: 'run identifier'
+          description: 'id identifier'
+          required: false
+        param2:
+          description: 'param1 identifier'
           required: false
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
