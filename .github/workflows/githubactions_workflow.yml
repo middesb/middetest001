@@ -31,34 +31,24 @@ jobs:
     steps:
     
       # build
-      - name: BUILD
+      - name: build
         run: echo "Building ...!"
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+ 
+  # This workflow contains a single job called "deploy"
+  deploy:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
 
-
-
-      # deploy	
-      - name: DEPLOY
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    
+      # deploy
+      - name: deploy
         run: echo "Deploying ...!"
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-
-      # test
-      - name: TEST
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-        run: echo "Testing ...!"
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-
-
-      # other actions
-      - name: OTHER_ACTIONS
-        run: echo "Other Actions...!"
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-
-
 
     # outputs
     outputs:
