@@ -32,29 +32,31 @@ jobs:
     
       # build
       - name: BUILD
+        run: echo "Building ...!"
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-        run: echo "Hello, world!"
+
 
 
       # deploy	
       - name: DEPLOY
+        run: echo "Deploying ...!"
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-        run: echo "Hello, world!"
       - uses: actions/checkout@v3
 
       # test
       - name: TEST
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        run: echo "Testing ...!"
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-        run: echo "Hello, world!"
 
 
       # other actions
       - name: OTHER_ACTIONS
+        run: echo "Other Actions...!"
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-        run: echo "Hello, world!"
 
 
 
