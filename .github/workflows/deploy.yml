@@ -47,6 +47,13 @@ jobs:
           echo "Add other actions to build."
           echo "test, and deploy your project."
           echo run identifier - ${{github.event.inputs.id }}
+           run: |
+          expr 3 + 7 > math-homework.txt
+      - name: Upload math result for job 1
+        uses: actions/upload-artifact@v3
+        with:
+          name: test
+          path: math-test.txt
           
     # outputs
     outputs:
