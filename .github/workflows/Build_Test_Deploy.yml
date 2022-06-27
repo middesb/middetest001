@@ -14,7 +14,7 @@ on:
 
 jobs:
 
-  build:
+  build1:
 
     runs-on: ubuntu-latest
 
@@ -26,8 +26,8 @@ jobs:
       - name: execute
         run: echo "Building ...!"
 
-  test:
-    needs: build
+  test1:
+    needs: build1
 
     runs-on: ubuntu-latest
     steps:
@@ -38,8 +38,8 @@ jobs:
         run: echo "Testing ...!"
       - uses: actions/checkout@v3
   
-  deploy:
-    needs: [build, test]
+  deploy1:
+    needs: [build1, test1]
     runs-on: ubuntu-latest
     steps:
       - name: init
