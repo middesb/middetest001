@@ -2,10 +2,7 @@
 
 name: Build_Test_Deploy
 
-# Controls when the workflow will run
 on:
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
      inputs: 
         id:
@@ -15,62 +12,41 @@ on:
           description: 'param2 identifier'
           required: false
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+
   build:
-    # The type of runner that the job will run on
+
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     
-      # init
       - name: init
         run: echo "Initializing ...!"
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       - name: execute
         run: echo "Building ...!"
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
- 
-  # This workflow contains a single job called "test"
+
   test:
     needs: build
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    runs-on: ubuntu-latest
     steps:
-    
-      # init
       - name: init
         run: echo "Initializing ...!"
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       - name: execute
         run: echo "Testing ...!"
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      
-   # This workflow contains a single job called "deploy"
+  
   deploy:
     needs: [build, test]
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    
-      # init
       - name: init
         run: echo "Initializing ...!"
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       - name: execute
         run: echo "Deploying ...!"
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
     # outputs
