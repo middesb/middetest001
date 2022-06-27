@@ -5,7 +5,7 @@ name: Build_Test_Deploy
 on:
   workflow_dispatch:
      inputs: 
-        id:
+        param1:
           description: 'param1 identifier'
           required: false
         param2:
